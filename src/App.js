@@ -354,7 +354,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['About', 'Projects', 'Experience', 'Contact'];
+  const navLinks = ['About', 'Experience', 'Projects', 'Contact'];
 
   return (
     <div className="min-h-screen cursor-none" style={{ backgroundColor: '#0f0f0f', color: '#faf7f2' }}>
@@ -594,8 +594,28 @@ function App() {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section id="experience" className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <AnimatedText>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              My <span style={{ color: '#f472b6' }}>Experience</span>
+            </h2>
+            <p className="text-lg mb-12" style={{ color: '#6a6a6a' }}>
+              Where I've contributed, learned, and made an impact.
+            </p>
+          </AnimatedText>
+
+          <div className="max-w-3xl">
+            {EXPERIENCE.map((exp, i) => (
+              <ExperienceCard key={i} exp={exp} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
-      <section id="projects" className="py-24">
+      <section id="projects" className="py-24" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedText>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -627,26 +647,6 @@ function App() {
               </a>
             </div>
           </AnimatedText>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-24" style={{ backgroundColor: '#0a0a0a' }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <AnimatedText>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              My <span style={{ color: '#f472b6' }}>Experience</span>
-            </h2>
-            <p className="text-lg mb-12" style={{ color: '#6a6a6a' }}>
-              Where I've contributed, learned, and made an impact.
-            </p>
-          </AnimatedText>
-
-          <div className="max-w-3xl">
-            {EXPERIENCE.map((exp, i) => (
-              <ExperienceCard key={i} exp={exp} index={i} />
-            ))}
-          </div>
         </div>
       </section>
 
